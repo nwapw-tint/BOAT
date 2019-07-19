@@ -11,7 +11,6 @@
 				src: url("Windows-Regular.ttf");
 				font-family: WindReg
 			}
-
 			p,input{
 				font-family:Windreg;
 			}
@@ -70,29 +69,32 @@
 				width:165px;
 				height: 110px;
 				position: relative;
-				top: -30px;
+				top: -130px;
 			}
 			
-			#topbar{
-				width:290px;
+			.topbar{
+				width:450px;
 				position:absolute;
 				left:2px;
 				top:2px;
-				
+				color:white;
+				text-align:left;
 			}
 			
 			#start_session_button{
 				position: fixed;
-				top:330px;
 				left:19px;
+				top:318px;
 				width: 65px;
+				height:22px;
 			}
 			
 			#stop_session_button{
 				position: fixed;
-				top:355px;
 				left:19px;
+				top:340px;
 				width: 65px;
+				height:22px;
 			}
 			
 			#sessions_bar{
@@ -127,13 +129,16 @@
 			}	
 			
 			#body{
-				height: 400px;
+				height: 525px;
 			}
 		</style>
 		
 	</head>
 	<body bgcolor="#D4D0C8" id="body">
-			<img src="bluebar.png" id="topbar"></img>
+			<div class="topbar">
+			<img src="bluebar.png" style="width:290px"></img>
+			<p style="position:relative; top: -31px; left:4px;">Color Tint</p>
+			</div>
 		<br>
 		<table>
 			<tr>
@@ -163,23 +168,29 @@
 							<p align="left" id="title" style="top:-25px;">Time in Minutes</p>
 							<input type="text" id="time_input"style="position:relative; top:-50px;">
 							<button class="add_button"><p id="buttontxt">+</p></button>
-							
+
 							<label class="checkbox-label">
 							<input type="radio" name="option1" value="color?">
 							<span class="custom-check"></span>
+							<p id="title" style="position:relative; top:-80px;left: 30px;">Blacklist</p>
 						</tr>
 						<tr>
+							<div style="position:relative; top:-50px;">
 							<label class="checkbox-label">
 							<input type="radio" name="option1" value="color?" id="box_two">
 							<span class="custom-check"></span>
+							<p id="title" style="position:relative; top:-80px;left: 30px;">Whitelist</p>
+							</div>
 						</tr>
 						<tr>
 							<center><img src="colorsquare-export.png" id="square"></center>
 						</tr>
 						<tr>
+							<div style="position:relative; top:-100px;">
 							<p align="left" id="title"style="top:-35px;">Blacklisted Sites</p>
 							<input type="text" id="site_input" style="position:relative; top: -60px;">
 							<button class="add_button "id="add_site_button" style="top: -43px;"><p id="buttontxt">+</p></button>
+							</div>
 						</tr>
 					</table>
 				</td> 
