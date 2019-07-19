@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="popup.js"></script>
+		<script src="popup_communication.js"></script>
+		<script src="popup_color_selection.js"></script>
+		<script src="popup_on_load.js"></script>
+		<script src="common_functions.js"></script>
+		<style>
+			@font-face {
+				src: url("Windows-Regular.ttf");
+				font-family: WindReg
+			}
+
+			p,input{
+				font-family:Windreg;
+			}
+			
+			input{
+				position: relative;
+				left: 6.5px;
+				top: -20px;
+				outline-width:0;
+				width: 60%;
+				height: 12px;
+			}
+			
+			td,html,button {border-style: outset;}
+			
+			#square,input{border-style: inset;}
+			
+			button {
+				background-color: #D4D0C8;
+				font-family: 'WindReg';
+				outline-color:black;
+			}
+			
+			.checkbox-label input{opacity: 0;}
+			
+			.checkbox-label .custom-check {
+				position: relative;
+				left:6.5px;
+				top: -50px;
+				background-color: #D4D0C8;
+				border-style: inset;
+				display: block;
+				width: 11px;
+				height: 11px;
+			}
+			
+			.checkbox-label input:checked ~ .custom-check {
+				background-image: url("x.png");
+				border-style: inset;
+				-webkit-transform: rotate(0deg) scale(1);
+				-ms-transform: rotate(0deg) scale(1);
+				transform:rotate(0deg) scale(1);
+				opacity:1;
+			}
+			
+			#session_label{
+				position: fixed;
+				top:22px;
+				left:19px;
+				padding-left:10px;
+				padding-right:10px;
+				font-size: 13px;
+			}
+			
+			#square{
+				width:165px;
+				height: 110px;
+				position: relative;
+				top: -30px;
+			}
+			
+			#topbar{
+				width:290px;
+				position:absolute;
+				left:2px;
+				top:2px;
+				
+			}
+			
+			#start_session_button{
+				position: fixed;
+				top:330px;
+				left:19px;
+				width: 65px;
+			}
+			
+			#stop_session_button{
+				position: fixed;
+				top:355px;
+				left:19px;
+				width: 65px;
+			}
+			
+			#sessions_bar{
+				padding-left:35px;
+				padding-right:35px;
+			}
+			
+			#setup_bar{
+				padding-left:90px;
+				padding-right:90px;
+			}
+			
+			.add_button{
+				position: relative;
+				left: 45px;
+				top: -32px;
+				width: 18px;
+				height: 18px;
+			}
+			
+			#buttontxt{
+				position: relative;
+				top: -18px;
+				left: -2px;
+				font-size: 14px;
+			}
+			
+			#title{
+				position:relative;
+				left: 5px;
+				font-size:13px;
+			}	
+			
+			#body{
+				height: 400px;
+			}
+		</style>
+		
+	</head>
+	<body bgcolor="#D4D0C8" id="body">
+			<img src="bluebar.png" id="topbar"></img>
+		<br>
+		<table>
+			<tr>
+				<td>
+					<table id="sessions_bar">
+						<tr>
+							<p id="session_label">Sessions</p>
+						</tr>
+						<tr>
+							<p id="sessions_text"></p>
+						</tr>
+						<tr>
+							<center><button id="start_session_button">Start</button></center>
+						</tr>
+						<tr>
+							<center><button id="stop_session_button">Stop</button></center>
+						</tr>
+					</table>
+				</td>
+				<td>
+					<table id="setup_bar">
+						<tr>
+						<p align="left" id="title" style="top:-9px">Session Name</p>
+						<input type="text" id="name_input" style="border-style:inset">
+						</tr>
+						<tr>
+							<p align="left" id="title" style="top:-25px;">Time in Minutes</p>
+							<input type="text" id="time_input"style="position:relative; top:-50px;">
+							<button class="add_button"><p id="buttontxt">+</p></button>
+							
+							<label class="checkbox-label">
+							<input type="radio" name="option1" value="color?">
+							<span class="custom-check"></span>
+						</tr>
+						<tr>
+							<label class="checkbox-label">
+							<input type="radio" name="option1" value="color?" id="box_two">
+							<span class="custom-check"></span>
+						</tr>
+						<tr>
+							<center><img src="colorsquare-export.png" id="square"></center>
+						</tr>
+						<tr>
+							<p align="left" id="title"style="top:-35px;">Blacklisted Sites</p>
+							<input type="text" id="site_input" style="position:relative; top: -60px;">
+							<button class="add_button "id="add_site_button" style="top: -43px;"><p id="buttontxt">+</p></button>
+						</tr>
+					</table>
+				</td> 
+			</tr>
+		</table>
+	</body>
+</html>
